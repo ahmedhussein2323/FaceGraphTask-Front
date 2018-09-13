@@ -1,0 +1,25 @@
+<div class="col-md-6">
+  <h2> images</h2>
+  <button class="btn btn-danger" (click)="viewimages()">View Users</button>
+  <input #file type="file" (change)="addImage(file.files)" />
+  <!-- <button class="btn btn-danger" (click)="uploadImages()">Upload Images</button> -->
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th class="hidden">Id</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let image of images">
+      <td class="hidden">{{image.id}}</td>
+      <td>{{image.url}}</td>
+      <!-- <td><button class="btn btn-danger" (click)="deleteimage(image)"> Delete</button> -->
+        <td>
+      <button class="btn btn-danger" (click)="deleteImage(image)" style="margin-left: 20px;"> Delete</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
