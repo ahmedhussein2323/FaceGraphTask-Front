@@ -23,7 +23,7 @@ export class ImageService {
     return this.http.put(this.baseUrl + '/' + image.id, image);
   }
 
-  deleteImage(id: number) {
+  deleteImage(id: string) {
     return this.http.delete(this.baseUrl + '/' + id);
   }
 }

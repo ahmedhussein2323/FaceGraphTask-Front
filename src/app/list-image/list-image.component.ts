@@ -28,9 +28,10 @@ export class ListImageComponent implements OnInit {
   };
 
   deleteImage(image: Image): void {
-    localStorage.removeItem("editImageId");
-    localStorage.setItem("editImageId", image.id.toString());
-    this.router.navigate(['edit-image']);
+    this.imageService.deleteImage(image.id)
+      .subscribe( data => {
+        debugger;
+      });
   };
 
   addImage(files): void {

@@ -46,6 +46,10 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        if (currentUser && currentUser.access_token) {
+            this.router.navigate(['list-user']);
+        }
     this.loginForm = this.formBuilder.group({
       email: ['', Validators.required],
       password: ['', Validators.required]
